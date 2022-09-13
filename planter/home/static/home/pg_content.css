@@ -1,0 +1,95 @@
+/**************************************
+ *         EXTERNAL CONTAINER         *
+ **************************************/
+.pg-container-ext {
+  width: 75%;
+}
+
+@media (max-width: 992px) {
+  .pg-container-ext {
+    width: 100%;
+  }
+}
+
+/**************************************
+ *              NAVBAR                *
+ **************************************/
+.pg-nav {
+  background-color: white;
+  border-bottom: 4px #574861 solid;
+  border-left: 4px #C1392B solid;
+  border-right: 4px #C1392B solid;
+}
+
+.navbar-nav .nav-link {
+  background-color: white;
+  border: 4px #E67F22 solid;
+  border-left: 4px #F39C11 solid;
+  border-top: 4px #F39C11 solid;
+  color: #220438;
+  font-weight: 700;
+  border-top-left-radius: 1ex;
+  border-bottom-left-radius: 1ex;
+  border-bottom-right-radius: 1ex;
+  border-bottom-left-radius: 0ex;
+  margin-right: 16px;
+}
+
+.navbar-nav .nav-link:hover, .navbar-nav .nav-link:active {
+  background-color: #E67F22;
+  border-left: 4px #C1392B solid;
+  border-top: 4px #C1392B solid;
+  color: white;
+}
+
+.navbar-collapse.collapsing .nav-link, .navbar-collapse.show .nav-link {
+  padding-left: 8px;
+  margin-right: 0px;
+  margin-bottom: 8px;
+  width: 100%;
+  text-align: left;
+}
+
+
+/**************************************
+ *              CONTENT               *
+ **************************************/
+.pg-content {
+  background-color: white;
+  border-left: 4px #E67F22 solid;
+  border-right: 4px #E67F22 solid;
+}
+
+/**************************************
+ *              SIDEPANEL             *
+ **************************************/
+.pg-sidepanel {
+  background-color: white;
+  border-left: 4px #574861 solid;
+}
+
+@media (max-width: 992px) {
+  .pg-sidepanel {
+    border-left:  none;
+  }
+ }
+
+.pg-sidepane {
+  border: 4px #574861 solid;
+  background-color: white;
+  color: #574861;
+}
+
+
+/**************************************
+ *              FOOTER                *
+ **************************************/
+footer {
+  background-color: white;
+  border-left: 4px #F39C11 solid;
+  border-right: 4px #F39C11 solid;
+  border-top: 4px #574861 solid;
+  color:#574861;
+  text-align: center;
+  padding: 4px;
+}

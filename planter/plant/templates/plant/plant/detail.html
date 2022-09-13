@@ -1,0 +1,31 @@
+{% extends "segment/base.html" %}
+
+{% block title %}Plant {{plant.name}}{% endblock %}
+{% block header_title %}{{plant.name}} of <a href="{{ plant.owners_profile.get_absolute_url  }}">{{plant.owners_profile.user.username}}</a>{% endblock %}
+
+{% block content %}
+        <div class="pg-box pg-box-secondary">
+            <div class="pg-label pg-label-secondary ">About</div>
+            <div class="content">
+                <p>Type: <a href="{{ plant.type.get_absolute_url }}">{{ plant.type.name }}</a></p>
+                <p>Type details: {{ plant.type.details }}</p>
+            </div>
+        </div>
+        <div class="pg-box pg-box-secondary">
+            <div class="pg-label pg-label-secondary ">Statistics [rating {{plant.rating}}]</div>
+            <div class="content">
+                <p>Statuses: {{ plant.statuses.count }}</p>
+                <p>Comments: {{ plant.all_comments.count }}</p>
+                {% include 'segment/reactions_list.html' with reactions=plant.all_reactions plant=plant %}
+            </div>
+        </div>
+
+    <hr>
+
+
+      {% for plantstatus in plant.statuses.all %}
+        {% include 'segment/plantstatus.html' with plantstatus=plantstatus %}
+    {% endfor %}
+
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "segment/base.html" %}
+
+{% block title %}Profile of {{userprofile.user.username}}{% endblock %}
+{% block header_title %}Profile of {{userprofile.user.username}}{% endblock %}
+
+{% block content %}
+    {% include 'segment/userprofile.html' with userprofile=userprofile simple=True %}
+
+
+    <div class="row">
+        <div class="col-12">
+            <div class="pg-box pg-box-primary mt-3">
+                <div class="pg-label pg-label-primary">Plants of {{userprofile.user.username}} <span>[{{userprofile.plants.count}}]</span></div>
+                <div class="content">
+                    {% for plant in plants %}
+                        {% include 'segment/plant_info.html' with plant=plant %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "segment/base.html" %}
+
+{% block title %}Plants atlas{% endblock %}
+{% block header_title %}Plants atlas {{ planttypes.count }} {% endblock %}
+
+{% block content %}
+    {% for planttype in planttypes %}
+        <div class="pg-box pg-box-primary mt-3">
+            <div class="pg-label pg-label-primary">{{ planttype.name }} <a href={% url 'plant:plant_list_by_type' planttype_slug=planttype.slug %}>examples</a></div>
+            <div class="content">
+                <div class="pg-box pg-box-secondary">
+                    <div class="pg-label pg-label-secondary ">Description</div>
+                    <div class="content">
+                        <p>{{ planttype.description }}</p>
+                    </div>
+                </div>
+                <div class="pg-box pg-box-secondary">
+                    <div class="pg-label pg-label-secondary ">Preferences</div>
+                    <div class="content">
+                        <p>{{ planttype.preferences }}</p>
+                    </div>
+                </div>
+                <div class="pg-box pg-box-secondary">
+                    <div class="pg-label pg-label-secondary ">Origin</div>
+                    <div class="content">
+                        <p>{{ planttype.origin }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,94 @@
+/**************************************
+ *                BOX                 *
+ **************************************/
+.pg-box {
+  margin-bottom: .75rem;
+  font-size: 1rem;
+}
+
+.pg-box-primary {
+  border-top: 4px #E67F22 solid;
+  border-left: 4px #E67F22 solid;
+  border-bottom: 4px #C1392B solid;
+  border-right: 4px #C1392B solid;
+}
+
+.pg-box-secondary {
+  border-top: 4px #8A868E solid;
+  border-left: 4px #8A868E solid;
+}
+
+/* LABELS */
+.pg-box>.pg-label {
+  margin-left: .75rem;
+  margin-right: 0rem;
+  margin-bottom: .75rem;
+  font-weight: bold;
+}
+
+.pg-box>.pg-label>span {
+  font-weight: 400;
+}
+
+.pg-box>.pg-label-primary {
+  padding-top: .5rem;
+  padding-bottom .5rem;
+  border-bottom: 4px #220438 solid;
+  color: #220438;
+  font-size: 1.35rem;
+}
+
+.pg-box>.pg-label-secondary {
+  border-bottom: 4px #8A868E solid;
+  color: #8A868E;
+  margin-right: 0.75rem;
+  font-size: 1.1rem;
+}
+
+/* CONTENT */
+.pg-box>.content {
+  margin-left: .75rem;
+  margin-right: .75rem;
+}
+
+.pg-box-secondary>.content {
+  margin-right: 0.75rem;
+  font-size: 1rem;
+}
+
+.pg-box-secondary>.content>p {
+  margin-bottom: 0.25rem;
+}
+
+.deb {
+  border: 1px blue solid;
+}
+
+/**************************************
+ *              BUTTON                *
+ **************************************/
+.btn-primary {
+  background-color: white;
+  border: 4px #E67F22 solid;
+  border-left: 4px #F39C11 solid;
+  border-top: 4px #F39C11 solid;
+  color: #220438;
+  font-weight: 700;
+  border-top-left-radius: 1ex;
+  border-bottom-left-radius: 1ex;
+  border-bottom-right-radius: 1ex;
+  border-bottom-left-radius: 0ex;
+  margin-right: 16px;
+}
+
+.btn-primary:hover, .btn-primary:active{
+  border: 4px #E67F22 solid;
+  background-color: #E67F22;
+  border-left: 4px #C1392B solid;
+  border-top: 4px #C1392B solid;
+  color: white;
+}
+
+/**************************************
+ *               CARDS                *
+ **************************************/

@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="{% static 'home/pg_base.css' %}" rel="stylesheet">
+    <link href="{% static 'home/pg_content.css' %}" rel="stylesheet">
+    <link href="{% static 'home/pg_widgets.css' %}" rel="stylesheet">
+
+    <!-- FA -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://unpkg.com/@popperjs/core@2" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="planting.js" defer></script>
+
+    <!-- JQuery todo soon -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="container pg-container-ext navbar navbar-expand-lg navbar-light pg-nav mt-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'home:home_view' %}"><img src="{% static 'res/pyrograf_logo_transparent_120p.png' %}" alt="Pyrograf" height="46" class="d-inline-block align-text-top"></a>
+            <button class="navbar-toggler btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'home:home_view' %}" >Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Planter</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'plant:planttype_list' %}">Plants atlas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'userprofile:userprofile_list' %}">Users</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Resume CV</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- aditional frame with messages list -->
+    {% block message_board %}
+    {% endblock %}
+
+    <!-- CONTENT - 2 COL LAYOUT -->
+    <div class="container pg-container-ext pg-content">
+        <div class="row mt-3">
+            <div class="col-lg-9 mb-3">
+                <h2>{% block header_title %}{% endblock %}</h2>
+                <hr>
+                {% block content %}
+                {% endblock %}
+            </div>
+            <div class="col-lg-3 pg-sidepanel">
+                <h2>User panel</h2>
+                <hr>
+                {% include 'segment/sidepanel.html' with user=user %}
+                {% block sidepanel %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+
+    <footer class="container pg-container-ext mt-3 mb-3">
+        <small>Made by Pyrograf 2022</small>
+    </footer>
+</body>
+</html>

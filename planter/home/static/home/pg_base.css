@@ -1,0 +1,33 @@
+/**************************************
+ *              GENERAL               *
+ **************************************
+ * COLORS                             *
+ * RED:    #C1392B                    *
+ * ORANGE: #E67F22                    *
+ * YELLOW: #F39C11                    *
+ * COBALT: #220438                    *
+ * PLUM:   #574861                    *
+ * GRAY:   #8A868E                    *
+ * BLACK:  #000000                    *
+ * WHITE:  #FFFFFF                    *
+ * WATER:  #49E7F5                    *
+ **************************************/
+* {
+  font-family: 'Quicksand', sans-serif;
+}
+
+body {
+  background-color: white;
+}
+
+a {
+  text-decoration: none;
+  color: #F39C11;
+  font-weight: 700;
+}
+
+hr {
+  border: 0;
+  border-bottom: 4px #8A868E solid;
+  margin-bottom: 0.75rem;
+}

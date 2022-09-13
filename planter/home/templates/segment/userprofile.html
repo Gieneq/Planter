@@ -1,0 +1,33 @@
+{% if not simple %}
+<div class="pg-box pg-box-primary mt-3">
+    <div class="pg-label pg-label-primary"><a href="{{ userprofile.get_absolute_url }}">{{ userprofile.user.username }} </a> <span>[12]</span></div>
+    <div class="content">
+{% endif %}
+
+        <div class="pg-box pg-box-secondary">
+            <div class="pg-label pg-label-secondary ">User statistics</div>
+            <div class="content">
+                <p>Comments given: {{ userprofile.comments_given.count }}</p>
+                <p>Reactions given: {{ userprofile.reactions_given.count }}</p>
+                <p>Comments obtained: {{ userprofile.comments_obtained.count }}</p>
+                <p>Reactions obtained: {{ userprofile.reactions_obtained.count }}</p>
+            </div>
+        </div>
+        <div class="pg-box pg-box-secondary">
+            <div class="pg-label pg-label-secondary ">Plants statistics</div>
+            <div class="content">
+                <p>Plants count: {{ userprofile.plants.count }}</p>
+                <p>Statuses count: {{ userprofile.user }}</p>
+            </div>
+        </div>
+
+        {% if button %}
+            <div class="d-grid gap-2 mb-3">
+                <a class="btn btn-primary m-0" type="button" href="{{ userprofile.get_absolute_url }}">Userprofile</a>
+            </div>
+        {% endif %}
+
+{% if not simple %}
+    </div>
+</div>
+{% endif %}

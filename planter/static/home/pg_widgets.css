@@ -1,0 +1,67 @@
+
+.pyrograf-border {
+  border: 2px #8A868E solid;
+}
+
+
+/**************************************
+ *              CARD                *
+ **************************************/
+.card-title {
+  font-weight: 700;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 1ex;
+  padding: 8px;
+  color: white;
+}
+
+.card {
+  border:none;
+}
+
+.plant-overlay {
+  border: 4px #8A868E solid;
+  border-radius: 1ex;
+  transition: 0.5s ease;
+  /* box-shadow: none; */
+}
+.plant-overlay:hover {
+  border: 4px #220438 solid;
+  box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  color: #574861;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.card h2 {
+  font-size: 12px;
+  margin-bottom: 0;
+}
+
+p {
+  color: #220438;
+}
+
+.card p {
+  font-size: 14px;
+  margin-bottom: 0.5em;
+}
+
+span {
+  color: #E67F22;
+}
+
+.card-title h1 {
+  margin-bottom: 0px;
+  color: white;
+  font-size: larger;
+}
+
+.card-title small {
+  color: white;
+  font-size: smaller;
+  font-weight: 300;
+}

@@ -1,0 +1,60 @@
+<!-- Authenticated user content dependant -->
+{% if not user.is_authenticated %}
+  <div class="row">
+      <div class="d-grid col-6 mx-auto">
+          <button type="button" class="btn btn-primary">Register</button>
+      </div>
+      <div class="d-grid col-6 mx-auto">
+          <button type="button" class="btn btn-primary">Login</button>
+      </div>
+  </div>
+{% else %}
+  <!-- Authenticated OK-->
+  {% include 'segment/userprofile.html' with userprofile=user.userprofile %}
+    <div class="pg-box pg-box-primary mt-3">
+        <div class="pg-label pg-label-primary">General</div>
+        <div class="content">
+            <div class="pg-box pg-box-secondary">
+                <div class="pg-label pg-label-secondary ">Datetime</div>
+                <div class="content">
+                    <p>Timezone: {{ user.userprofile.timezone }}</p>
+                    <p>Date: {{ user.userprofile.get_local_date }}</p>
+                    <p>Time: {{ user.userprofile.get_local_time }}</p>
+                </div>
+            </div>
+            <div class="pg-box pg-box-secondary">
+                <div class="pg-label pg-label-secondary ">Weather forecast</div>
+                <div class="content">
+                    <p>Weather: Sunny </p>
+                    <p>Temperature: 11*C</p>
+                    <p>Humidity: 44%</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+  <!-- Buttons -->
+  <div class="row">
+      <div class="d-grid col-7 mx-auto">
+          <a href="{{ user.userprofile.get_absolute_url }}" type="button" class="btn btn-primary m-0">Profile</a>
+      </div>
+      <div class="d-grid col-5 mx-auto">
+          <a type="button" class="btn btn-primary m-0">Logout</a>
+      </div>
+  </div>
+
+  {% if user.is_staff %}
+    <div class="pg-box pg-box-primary mt-3">
+        <div class="pg-label pg-label-primary">Statistics</div>
+        <div class="content">
+            <p>Only visible to staff members.</p>
+            <div class="pg-box pg-box-secondary">
+                <div class="pg-label pg-label-secondary ">Sth</div>
+                <div class="content">Details dasdas 2 22 da sdas dasda asdada sdas as asd asd asd</div>
+            </div>
+        </div>
+    </div>
+  {% endif %}
+{% endif %}

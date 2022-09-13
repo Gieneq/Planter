@@ -1,0 +1,22 @@
+{% if not simple %}
+<div class="pg-box pg-box-primary mt-3">
+    <div class="pg-label pg-label-primary">{{ plantstatus.status }} -    {{ plantstatus.published }}</div>
+    <div class="content">
+        <p>{{ plantstatus.info }}</p>
+          {% for comment in plantstatus.visible_comments %}
+            <div class="pg-box pg-box-secondary">
+                <div class="pg-label pg-label-secondary ">{{ comment.authors_profile.user.username }} at {{ comment.published }}</div>
+                <div class="content">
+                    {{ comment.content }}
+                </div>
+            </div>
+          {% endfor %}
+
+        {% if button %}
+            <div class="d-grid gap-2 mb-3">
+                <a class="btn btn-primary m-0" type="button" href="{{ userprofile.get_absolute_url }}">Userprofile</a>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endif %}

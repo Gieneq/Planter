@@ -1,0 +1,14 @@
+{% extends "segment/base.html" %}
+
+{% block title %}Users{% endblock %}
+{% block header_title %}Users{% endblock %}
+
+{% block content %}
+<h2>Search form todo</h2>
+
+<p>{{ statistics.max.plants.user.username }} with {{ statistics.max.plants.plants.count }} plants </p>
+<p>{{ statistics.max.statuses.user.username }} with {{ statistics.max.statuses.statuses_of_plants.count }} plants </p>
+
+{% include 'segment/userprofile_list.html' %}
+
+{% endblock %}

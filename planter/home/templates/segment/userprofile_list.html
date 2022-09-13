@@ -1,0 +1,7 @@
+<div class="row">
+    {% for userprofile in userprofiles %}
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            {% include 'segment/userprofile.html' with userprofile=userprofile button=True %}
+        </div>
+    {% endfor %}
+</div>

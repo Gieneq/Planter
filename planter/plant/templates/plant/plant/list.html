@@ -1,0 +1,13 @@
+{% extends "segment/base.html" %}
+
+{% block title %}Plants list{% endblock %}
+
+{% block header_title %}
+Plants list {% if planttype %} {{ planttype.name }}{% endif %} [{{ plants.count }}]
+{% endblock %}
+
+{% block content %}
+    {% for plant in plants %}
+        {% include 'segment/plant_info.html' with plant=plant %}
+    {% endfor %}
+{% endblock %}

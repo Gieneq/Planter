@@ -1,0 +1,15 @@
+<div class="pg-box pg-box-secondary">
+    <div class="pg-label pg-label-secondary "><a href="{{ plant.get_absolute_url }}">{{plant.name}}</a></div>
+    <div class="content">
+        <p>Type: <a href="{{ plant.type.get_absolute_url }}">{{ plant.type }}</a> </p>
+        <p>Statused: {{ plant.statuses.count }}</p>
+        {% if plant.statuses.count %}
+        <p>Last status: {{ plant.last_status.published }}</p>
+        {% endif %}
+      <a type="button" class="btn btn-primary" href="{{ plant.get_absolute_url }}">View</a>
+        {% if user.is_authenticated and user.id is plant.owners_profile.user.id %}
+          <a type="button" class="btn btn-primary" href="#">Edit</a>
+          <a type="button" class="btn btn-primary" href="#">Delete</a>
+        {% endif %}
+    </div>
+</div>

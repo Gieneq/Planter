@@ -1,0 +1,16 @@
+/**************************************
+ *              FOOTER                *
+ **************************************/
+* {
+  font-family: 'Quicksand', sans-serif;
+}
+
+body {
+  background-color: white;
+}
+
+body a {
+  text-decoration: none;
+  color:#C1392B;
+  font-weight: 700;
+}
